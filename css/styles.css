@@ -1,0 +1,276 @@
+/* RESET + BASE */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+/* Color system */
+:root {
+  --bg: #2b221b;        /* dark brown background */
+  --text: #ffffff;      /* white text */
+  --thumb-bg: #3a2f27;  /* fallback thumbnail background */
+  --hover: #b9f27c;     /* museum green */
+}
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+  background: var(--bg);
+  color: var(--text);
+  overflow: hidden; /* desktop: page doesn't scroll; columns do */
+}
+
+/* Links */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#home-link {
+  color: var(--text);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#home-link:hover {
+  color: var(--hover);
+}
+
+/* =========================
+   LAYOUT (DESKTOP)
+========================= */
+.layout {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 180px 1fr 180px;
+  gap: 24px;
+  padding: 24px;
+}
+
+.nav,
+.main,
+.sidebar {
+  height: calc(100vh - 48px);
+}
+
+/* =========================
+   NAV
+========================= */
+.nav {
+  overflow: hidden;
+}
+
+.nav h1 {
+  font-size: 14px;
+  font-weight: normal;
+  margin-bottom: 16px;
+}
+
+.nav ul {
+  list-style: none;
+  margin-bottom: 12px;
+}
+
+.nav li {
+  margin-bottom: 8px;
+}
+
+.nav a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.nav a:hover {
+  color: var(--hover);
+}
+
+.nav-quote {
+  max-width: 22ch;
+  opacity: 0.9;
+}
+
+/* =========================
+   CENTER COLUMN
+========================= */
+.main {
+  overflow-y: auto;
+}
+
+/* FEATURED GRID (CENTER) */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+/* =========================
+   THUMBNAILS (shared)
+========================= */
+.project-thumb {
+  background: var(--thumb-bg);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  display: block;
+  aspect-ratio: 1 / 1; /* default */
+}
+
+/* hero thumbs in featured grid */
+.project-thumb.hero {
+  grid-column: span 2;
+  aspect-ratio: 5 / 3;
+}
+
+/* media fills thumb and crops */
+.project-thumb img,
+.project-thumb video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none; /* ensures hover triggers parent */
+  position: relative;
+  z-index: 1;
+}
+
+/* hover border overlay */
+.project-thumb::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 3px solid transparent;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.project-thumb:hover::after {
+  border-color: var(--hover);
+}
+
+/* active (selected) */
+.project-thumb.is-active::after {
+  border-color: var(--hover);
+}
+
+/* =========================
+   RIGHT SIDEBAR (DESKTOP)
+========================= */
+.sidebar {
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.project-thumb.small {
+  aspect-ratio: 5 / 4;   /* landscape thumbs */
+  flex: 0 0 auto;        /* prevents squishing; allows scroll */
+}
+
+/* =========================
+   PROJECT DETAIL (CENTER)
+========================= */
+.project-detail {
+  max-width: 900px;
+  margin: 0 auto;
+  padding-bottom: 60px;
+}
+
+.project-detail:empty {
+  display: none;
+}
+
+
+.project-hero {
+  width: 100%;
+  margin-bottom: 24px;
+  display: block;
+}
+
+.project-meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+  opacity: 0.95;
+}
+
+.project-meta p {
+  margin-bottom: 8px;
+}
+
+.project-gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.project-gallery img,
+.project-gallery video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 768px) {
+  body {
+    overflow: auto; /* restore normal page scroll */
+  }
+
+  .nav,
+  .main,
+  .sidebar {
+    height: auto;
+    overflow: visible;
+  }
+
+  .layout {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+
+  /* nav: 2 columns */
+  .nav {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .nav h1 {
+    grid-column: span 2;
+    margin-bottom: 8px;
+  }
+
+  /* hide featured grid on mobile */
+  .project-grid {
+    display: none;
+  }
+
+  /* mobile project feed */
+  .sidebar {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  /* keep same thumb ratio on mobile */
+  .project-thumb.small {
+    aspect-ratio: 5 / 4;
+  }
+
+  /* project detail text becomes 1 column */
+  .project-meta {
+    grid-template-columns: 1fr;
+  }
+}
