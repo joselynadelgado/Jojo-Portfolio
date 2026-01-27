@@ -1,5 +1,5 @@
 // =========================
-// Project data
+// <!!> Project data
 // =========================
 const projects = {
   caguas: {
@@ -11,7 +11,13 @@ const projects = {
       ["Year", "2025"],
     ],
     rightCol: ["Short project description goes here. Keep it to a few lines."],
-    gallery: [{ type: "image", src: "images/Caguas/IMG_4121.jpg", alt: "Soy de Caguas" }],
+    gallery: [
+      {
+        type: "image",
+        src: "images/Caguas/IMG_4121.jpg",
+        alt: "Soy de Caguas",
+      },
+    ],
   },
 
   buttons: {
@@ -23,7 +29,13 @@ const projects = {
       ["Year", "2024"],
     ],
     rightCol: ["Another description here."],
-    gallery: [{ type: "image", src: "images/London/IMG_6896.jpg", alt: "Buttons" }],
+    gallery: [
+      {
+        type: "image",
+        src: "images/London/IMG_6896.jpg",
+        alt: "Buttons",
+      },
+    ],
   },
 
   beer: {
@@ -34,7 +46,13 @@ const projects = {
       ["Year", "2024"],
     ],
     rightCol: ["Description..."],
-    gallery: [{ type: "image", src: "images/Beer/can1.png", alt: "Beer can" }],
+    gallery: [
+      {
+        type: "image",
+        src: "images/Beer/can1.png",
+        alt: "Beer can",
+      },
+    ],
   },
 
   deerfield: {
@@ -45,7 +63,13 @@ const projects = {
       ["Year", "2025"],
     ],
     rightCol: ["Description..."],
-    gallery: [{ type: "image", src: "images/Deerfield/1797/IMG_3826.jpeg", alt: "Invitation" }],
+    gallery: [
+      {
+        type: "image",
+        src: "images/Deerfield/1797/IMG_3826.jpeg",
+        alt: "Invitation",
+      },
+    ],
   },
 
   punchy: {
@@ -56,7 +80,13 @@ const projects = {
       ["Year", "2024"],
     ],
     rightCol: ["Description..."],
-    gallery: [{ type: "image", src: "images/Punchy/punchy5.png", alt: "Punchy Sans" }],
+    gallery: [
+      {
+        type: "image",
+        src: "images/Punchy/punchy5.png",
+        alt: "Punchy Sans",
+      },
+    ],
   },
 
   kaleidoscope: {
@@ -67,7 +97,13 @@ const projects = {
       ["Year", "2024"],
     ],
     rightCol: ["Description..."],
-    gallery: [{ type: "image", src: "images/Kaleidoscope/IMG_5457.jpg", alt: "Kaleidoscope" }],
+    gallery: [
+      {
+        type: "image",
+        src: "images/Kaleidoscope/IMG_5457.jpg",
+        alt: "Kaleidoscope",
+      },
+    ],
   },
 
   radical: {
@@ -78,7 +114,13 @@ const projects = {
       ["Year", "2024"],
     ],
     rightCol: ["Description..."],
-    gallery: [{ type: "image", src: "images/Radical/radical.png", alt: "Radical Modernisms" }],
+    gallery: [
+      {
+        type: "image",
+        src: "images/Radical/radical.png",
+        alt: "Radical Modernisms",
+      },
+    ],
   },
 
   buckland: {
@@ -89,7 +131,13 @@ const projects = {
       ["Year", "2024"],
     ],
     rightCol: ["Description..."],
-    gallery: [{ type: "image", src: "images/BBB/Mockups/cue.png", alt: "Cue ball" }],
+    gallery: [
+      {
+        type: "image",
+        src: "images/BBB/Mockups/cue.png",
+        alt: "Cue ball",
+      },
+    ],
   },
 
   questions: {
@@ -100,7 +148,13 @@ const projects = {
       ["Year", "2024"],
     ],
     rightCol: ["Description..."],
-    gallery: [{ type: "image", src: "images/Questions/IMG_4185.jpg", alt: "7 Questions spreads" }],
+    gallery: [
+      {
+        type: "image",
+        src: "images/Questions/IMG_4185.jpg",
+        alt: "7 Questions spreads",
+      },
+    ],
   },
 
   motion: {
@@ -116,30 +170,43 @@ const projects = {
 };
 
 // =========================
-// DOM hooks
+// <!!> DOM hooks
 // =========================
 const featuredGrid = document.getElementById("featured-grid");
 const detail = document.getElementById("project-detail");
 const main = document.getElementById("main");
 const homeLink = document.getElementById("home-link");
 
-// Mobile pager (MUST exist in your HTML)
+// <!!> Mobile pager (MUST exist in your HTML)
 const pager = document.getElementById("mobile-pager");
 const pagerPrev = document.getElementById("pager-prev");
 const pagerNext = document.getElementById("pager-next");
 
+// =========================
+// <!!> State
+// =========================
 let currentSlug = null;
 let bottomObserver = null;
 
-// Sidebar order = whatever order the sidebar thumbs appear in
+// =========================
+// <!!> Helpers
+// =========================
+
+// <!!> Sidebar order = whatever order the sidebar thumbs appear in
 function getProjectOrder() {
   return Array.from(document.querySelectorAll(".project-thumb.small[data-slug]"))
     .map((el) => el.dataset.slug)
     .filter(Boolean);
 }
 
+function disconnectBottomObserver() {
+  if (!bottomObserver) return;
+  bottomObserver.disconnect();
+  bottomObserver = null;
+}
+
 // =========================
-// Modes
+// <!!> Mode switching
 // =========================
 function setModeHome({ push = true } = {}) {
   document.body.classList.remove("is-project");
@@ -148,17 +215,19 @@ function setModeHome({ push = true } = {}) {
   currentSlug = null;
   detail.innerHTML = "";
 
-  // Desktop shows featured grid; mobile hides it via CSS
+  // <!!> Desktop shows featured grid; mobile hides it via CSS
   if (featuredGrid) featuredGrid.style.display = "";
 
-  // Hide pager on home
+  // <!!> Hide pager on home
   if (pager) {
     pager.classList.remove("is-visible");
     pager.setAttribute("aria-hidden", "true");
   }
 
-  // Clear active state
-  document.querySelectorAll(".project-thumb.is-active").forEach((el) => el.classList.remove("is-active"));
+  // <!!> Clear active state
+  document
+    .querySelectorAll(".project-thumb.is-active")
+    .forEach((el) => el.classList.remove("is-active"));
 
   disconnectBottomObserver();
 
@@ -170,23 +239,17 @@ function setModeProject() {
   document.body.classList.add("is-project");
   document.body.classList.remove("is-home");
 
-  // Hide featured grid on desktop when in a project
+  // <!!> Hide featured grid on desktop when in a project
   if (featuredGrid) featuredGrid.style.display = "none";
 }
 
 // =========================
-// Pager reveal (only when at bottom)
+// <!!> Pager reveal (only when at bottom)
 // =========================
-function disconnectBottomObserver() {
-  if (bottomObserver) {
-    bottomObserver.disconnect();
-    bottomObserver = null;
-  }
-}
-
 function setupBottomReveal() {
   if (!pager) return;
 
+  // <!!> Sentinel is rendered inside project HTML in renderProject()
   const sentinel = document.getElementById("pager-sentinel");
   if (!sentinel) return;
 
@@ -199,7 +262,8 @@ function setupBottomReveal() {
       pager.setAttribute("aria-hidden", isAtBottom ? "false" : "true");
     },
     {
-      root: main || null, // on desktop main scrolls; on mobile root=null (viewport) is fine
+      // <!!> Desktop: main scrolls; Mobile: root=null uses viewport
+      root: main || null,
       threshold: 0.1,
     }
   );
@@ -224,7 +288,7 @@ function updatePagerButtons() {
 }
 
 // =========================
-// Render
+// <!!> Render
 // =========================
 function renderProject(slug, { push = true } = {}) {
   const p = projects[slug];
@@ -233,7 +297,7 @@ function renderProject(slug, { push = true } = {}) {
   currentSlug = slug;
   setModeProject();
 
-  // Highlight active thumb (sidebar + featured grid)
+  // <!!> Highlight active thumb (sidebar + featured grid)
   document.querySelectorAll(".project-thumb[data-slug]").forEach((el) => {
     el.classList.toggle("is-active", el.dataset.slug === slug);
   });
@@ -275,23 +339,21 @@ function renderProject(slug, { push = true } = {}) {
     <div id="pager-sentinel" style="height: 1px;"></div>
   `;
 
-    // Always jump to top when switching projects
-    main.scrollTop = 0;        // desktop (center column scroll)
-    window.scrollTo(0, 0);     // mobile (page scroll)
+  // <!!> Always jump to top when switching projects
+  if (main) main.scrollTop = 0; // desktop (center column scroll)
+  window.scrollTo(0, 0);        // mobile (page scroll)
 
   if (push) history.pushState({ slug }, "", `./#${slug}`);
-
-  if (main) main.scrollTop = 0;
 
   updatePagerButtons();
   setupBottomReveal();
 }
 
 // =========================
-// Click handling
+// <!!> Events
 // =========================
 
-// Click any thumbnail (featured grid or sidebar)
+// <!!> Click any thumbnail (featured grid or sidebar)
 document.addEventListener("click", (e) => {
   const thumb = e.target.closest(".project-thumb[data-slug]");
   if (!thumb) return;
@@ -300,7 +362,7 @@ document.addEventListener("click", (e) => {
   if (slug) renderProject(slug);
 });
 
-// Name goes home
+// <!!> Name goes home
 if (homeLink) {
   homeLink.addEventListener("click", (e) => {
     e.preventDefault();
@@ -308,7 +370,7 @@ if (homeLink) {
   });
 }
 
-// Pager buttons click
+// <!!> Pager buttons click
 if (pager) {
   pager.addEventListener("click", (e) => {
     const btn = e.target.closest("button[data-to]");
@@ -320,16 +382,21 @@ if (pager) {
   });
 }
 
-// Back/forward
+// <!!> Back/forward support
 window.addEventListener("popstate", (e) => {
-  const slug = e.state?.slug || (location.hash ? location.hash.replace("#", "") : "");
+  const slug =
+    e.state?.slug || (location.hash ? location.hash.replace("#", "") : "");
+
   if (slug && projects[slug]) renderProject(slug, { push: false });
   else setModeHome({ push: false });
 });
 
-// Init
+// =========================
+// <!!> Init
+// =========================
 (function init() {
   const slug = location.hash ? location.hash.replace("#", "") : "";
+
   if (slug && projects[slug]) {
     history.replaceState({ slug }, "", `./#${slug}`);
     renderProject(slug, { push: false });

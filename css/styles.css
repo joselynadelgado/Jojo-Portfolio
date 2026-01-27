@@ -7,15 +7,17 @@
   padding: 0;
 }
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
-/* Color system */
+/* <!!> Color system */
 :root {
   --bg: #2b221b;
   --text: #ffffff;
   --thumb-bg: #3a2f27;
+
   --hover: #b9f27c;     /* keep this for the green border hover */
   --nav-link: #b9f27c;  /* green text for nav */
   --nav-hover: #ffffff; /* white hover for nav */
@@ -28,11 +30,13 @@ body {
   background: var(--bg);
   color: var(--text);
 
-  /* desktop: page doesn't scroll; columns do */
+  /* <!!> Desktop: page doesn't scroll; columns do */
   overflow: hidden;
 }
 
-/* Links */
+/* =========================
+   LINKS (GLOBAL + NAV OVERRIDES)
+========================= */
 a {
   color: inherit;
   text-decoration: none;
@@ -43,7 +47,7 @@ a:hover {
   text-decoration: none;
 }
 
-/* Left nav link colors */
+/* <!!> Left nav link colors override global link hover */
 .nav a {
   color: var(--nav-link);
 }
@@ -51,7 +55,6 @@ a:hover {
 .nav a:hover {
   color: var(--nav-hover);
 }
-
 
 /* =========================
    LAYOUT (DESKTOP)
@@ -98,9 +101,9 @@ a:hover {
   max-width: 22ch;
 }
 
-/* photo under Contact */
+/* <!!> Photo under Contact */
 .nav-photo {
-  width: 100px;   /* your preferred size */
+  width: 100px; /* your preferred size */
   height: auto;
   display: block;
 }
@@ -122,7 +125,7 @@ a:hover {
 }
 
 /* =========================
-   THUMBNAILS (shared)
+   THUMBNAILS (SHARED)
 ========================= */
 .project-thumb {
   background: var(--thumb-bg);
@@ -138,6 +141,12 @@ a:hover {
   aspect-ratio: 5 / 3;
 }
 
+.project-thumb.small {
+  aspect-ratio: 10 / 7;
+  flex: 0 0 auto;
+  font-size: 10px;
+}
+
 .project-thumb img,
 .project-thumb video {
   width: 100%;
@@ -149,7 +158,7 @@ a:hover {
   z-index: 1;
 }
 
-/* Hover border overlay */
+/* <!!> Hover border overlay */
 .project-thumb::after {
   content: "";
   position: absolute;
@@ -172,12 +181,6 @@ a:hover {
   display: flex;
   flex-direction: column;
   gap: 12px;
-}
-
-.project-thumb.small {
-  aspect-ratio: 10 / 7;
-  flex: 0 0 auto;
-  font-size: 10px;
 }
 
 /* =========================
@@ -227,10 +230,11 @@ a:hover {
 }
 
 /* =========================
-   MOBILE PAGER (Cargo-like: appears only when JS adds .is-visible)
+   MOBILE PAGER
 ========================= */
+/* <!!> Hidden by default; appears when JS adds .is-visible (and in mobile rules below) */
 .mobile-pager {
-  display: none;            /* hidden by default */
+  display: none;
   gap: 12px;
   padding: 18px 0 28px;
   margin-top: 24px;
@@ -240,6 +244,7 @@ a:hover {
   display: flex;
 }
 
+/* <!!> Button version (your HTML currently uses <button>) */
 .pager-btn {
   flex: 1;
   background: transparent;
@@ -260,19 +265,7 @@ a:hover {
   cursor: default;
 }
 
-/* Mobile pager base (hidden unless .is-visible is added by JS) */
-.mobile-pager {
-  display: none;
-  gap: 12px;
-  padding: 18px 0 28px;
-  margin-top: 24px;
-}
-
-.mobile-pager.is-visible {
-  display: flex;
-}
-
-/* Make the links look like buttons */
+/* <!!> Link version (only applies if you ever switch pager to <a> tags) */
 .mobile-pager a {
   flex: 1;
   display: flex;
@@ -280,7 +273,7 @@ a:hover {
   justify-content: center;
 
   padding: 14px 16px;
-  border: 1px solid rgba(255,255,255,0.35);
+  border: 1px solid rgba(255, 255, 255, 0.35);
   border-radius: 6px;
 
   color: var(--text);
@@ -293,11 +286,12 @@ a:hover {
   color: var(--hover);
 }
 
-/* Never show pager on desktop */
+/* <!!> Never show pager on desktop */
 @media (min-width: 769px) {
-  .mobile-pager { display: none !important; }
+  .mobile-pager {
+    display: none !important;
+  }
 }
-
 
 /* =========================
    MOBILE
@@ -349,15 +343,31 @@ a:hover {
     font-size: 12px;
   }
 
-  /* show sidebar only on HOME */
-  body.is-project .sidebar { display: none; }
-  body.is-home .sidebar { display: grid; }
+  /* <!!> Show sidebar only on HOME */
+  body.is-project .sidebar {
+    display: none;
+  }
+  body.is-home .sidebar {
+    display: grid;
+  }
 
-  /* mobile pager exists only on project pages (and only when .is-visible) */
-  body.is-project .mobile-pager.is-visible { display: flex; }
-  body.is-project .mobile-pager:not(.is-visible) { display: none; }
+  /* <!!> Mobile pager exists only on project pages (and only when .is-visible) */
+  body.is-project .mobile-pager.is-visible {
+    display: flex;
+  }
+  body.is-project .mobile-pager:not(.is-visible) {
+    display: none;
+  }
+
+  /* <!!> Extra spacing/behavior you had for mobile project pages */
+  body.is-project .mobile-pager {
+    justify-content: space-between;
+    gap: 24px;
+    margin-top: 40px;
+  }
 
   .project-meta {
     grid-template-columns: 1fr;
   }
 }
+
