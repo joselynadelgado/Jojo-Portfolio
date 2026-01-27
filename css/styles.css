@@ -95,6 +95,16 @@ a {
   opacity: 0.9;
 }
 
+/* Tiny photo under Contact */
+.nav-photo {
+  display: block;        /* puts it on its own line */
+  width: 10px;           /* tiny on purpose */
+  height: auto;
+  margin-top: 6px;       /* breathing room from “Contact” */
+  opacity: 0.9;          /* optional: slightly soft */
+}
+
+
 /* =========================
    CENTER COLUMN
 ========================= */
