@@ -227,6 +227,11 @@ a {
     overflow: auto; /* restore normal page scroll */
   }
 
+/* HOME state on mobile: hide center column entirely */
+body.is-home .main {
+  display: none;
+}
+
   .nav,
   .main,
   .sidebar {
