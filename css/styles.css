@@ -177,6 +177,10 @@ a:hover {
   padding-bottom: 60px;
 }
 
+#project-detail:empty {
+  display: none;
+}
+
 .project-hero {
   width: 100%;
   height: auto;
