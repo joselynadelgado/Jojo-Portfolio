@@ -7,18 +7,16 @@
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 
-<body>
+<body class="is-home">
   <div class="layout">
 
     <!-- LEFT NAV -->
     <nav class="nav">
       <h1 class="site-title">
-  <a href="./" id="home-link">Jojo Delgado</a>
-</h1>
+        <a href="./" id="home-link">Jojo Delgado</a>
+      </h1>
 
-
-
-      <ul>
+      <ul class="nav-links">
         <li>
           <a href="https://www.linkedin.com/in/jojo-delgado"
              target="_blank" rel="noopener noreferrer">LinkedIn</a>
@@ -29,16 +27,12 @@
         </li>
         <li>
           <a href="mailto:joselynadelgado@gmail.com?subject=Portfolio%20Inquiry">Contact</a>
-
-          <img
-    src="images/About/photobooth.jpg"
-    alt="Jojo photobooth"
-    class="nav-photo"
-  >
+        </li>
+        <li class="nav-photo-wrap">
+          <img class="nav-photo" src="images/About/photobooth.jpg" alt="Jojo photo">
         </li>
       </ul>
 
-      <!-- NOTE: use a paragraph instead of <ul> for text -->
       <p class="nav-quote">
         Designing at Deerfield Academy and taking on freelance projects.
       </p>
@@ -50,32 +44,35 @@
       <!-- This is where a clicked project will render -->
       <section class="project-detail" id="project-detail"></section>
 
-
-      <!-- Optional "home" featured grid (shows until you click a project) -->
+      <!-- Desktop-only featured grid (mobile hides via CSS) -->
       <section class="project-grid" id="featured-grid">
-  <div class="project-thumb hero" data-slug="caguas">
-    <img src="images/Caguas/IMG_4121.jpg" alt="Soy de Caguas book cover thumbnail">
-  </div>
+        <div class="project-thumb hero" data-slug="caguas">
+          <img src="images/Caguas/IMG_4121.jpg" alt="Soy de Caguas book cover thumbnail">
+        </div>
 
-  <div class="project-thumb" data-slug="buttons">
-    <img src="images/London/IMG_6896.jpg" alt="Scan of 100 buttons">
-  </div>
+        <div class="project-thumb" data-slug="buttons">
+          <img src="images/London/IMG_6896.jpg" alt="Scan of 100 buttons">
+        </div>
 
-  <div class="project-thumb" data-slug="beer">
-    <img src="images/Beer/can1.png" alt="Beer can artwork">
-  </div>
+        <div class="project-thumb" data-slug="beer">
+          <img src="images/Beer/can1.png" alt="Beer can artwork">
+        </div>
 
-  <div class="project-thumb hero" data-slug="deerfield">
-    <img src="images/Deerfield/1797/IMG_3826.jpeg" alt="Invitation">
-  </div>
-</section>
+        <div class="project-thumb hero" data-slug="deerfield">
+          <img src="images/Deerfield/1797/IMG_3826.jpeg" alt="Invitation">
+        </div>
+      </section>
 
+      <!-- MOBILE ONLY pager (your JS can toggle .is-visible when at bottom) -->
+      <div class="mobile-pager" id="mobile-pager" aria-hidden="true">
+        <button class="pager-btn" id="pager-prev" type="button">← Prev</button>
+        <button class="pager-btn" id="pager-next" type="button">Next →</button>
+      </div>
 
     </main>
 
     <!-- RIGHT SIDEBAR (ALL PROJECTS) -->
     <aside class="sidebar" id="sidebar">
-
       <div class="project-thumb small" data-slug="caguas">
         <img src="images/Caguas/IMG_4121.jpg" alt="Soy de Caguas book cover thumbnail">
       </div>
@@ -117,11 +114,10 @@
           <source src="images/Motion/LIAE/Debut-Album.mp4" type="video/mp4">
         </video>
       </div>
-
     </aside>
+
   </div>
 
-  <!-- IMPORTANT: JS goes at the bottom so the DOM exists -->
   <script src="js/app.js"></script>
 </body>
 </html>
