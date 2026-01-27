@@ -275,6 +275,10 @@ function renderProject(slug, { push = true } = {}) {
     <div id="pager-sentinel" style="height: 1px;"></div>
   `;
 
+    // Always jump to top when switching projects
+    main.scrollTop = 0;        // desktop (center column scroll)
+    window.scrollTo(0, 0);     // mobile (page scroll)
+
   if (push) history.pushState({ slug }, "", `./#${slug}`);
 
   if (main) main.scrollTop = 0;

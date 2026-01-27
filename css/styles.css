@@ -16,11 +16,13 @@ html, body {
   --bg: #2b221b;
   --text: #ffffff;
   --thumb-bg: #3a2f27;
-  --hover: #b9f27c;
+  --hover: #b9f27c;     /* keep this for the green border hover */
+  --nav-link: #b9f27c;  /* green text for nav */
+  --nav-hover: #ffffff; /* white hover for nav */
 }
 
 body {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: Helvetica, sans-serif;
   font-size: 14px;
   line-height: 1.4;
   background: var(--bg);
@@ -40,6 +42,16 @@ a:hover {
   color: var(--hover);
   text-decoration: none;
 }
+
+/* Left nav link colors */
+.nav a {
+  color: var(--nav-link);
+}
+
+.nav a:hover {
+  color: var(--nav-hover);
+}
+
 
 /* =========================
    LAYOUT (DESKTOP)
@@ -163,7 +175,7 @@ a:hover {
 }
 
 .project-thumb.small {
-  aspect-ratio: 5 / 4;
+  aspect-ratio: 10 / 7;
   flex: 0 0 auto;
   font-size: 10px;
 }
@@ -247,6 +259,45 @@ a:hover {
   opacity: 0.35;
   cursor: default;
 }
+
+/* Mobile pager base (hidden unless .is-visible is added by JS) */
+.mobile-pager {
+  display: none;
+  gap: 12px;
+  padding: 18px 0 28px;
+  margin-top: 24px;
+}
+
+.mobile-pager.is-visible {
+  display: flex;
+}
+
+/* Make the links look like buttons */
+.mobile-pager a {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 14px 16px;
+  border: 1px solid rgba(255,255,255,0.35);
+  border-radius: 6px;
+
+  color: var(--text);
+  text-decoration: none;
+  font: inherit;
+}
+
+.mobile-pager a:hover {
+  border-color: var(--hover);
+  color: var(--hover);
+}
+
+/* Never show pager on desktop */
+@media (min-width: 769px) {
+  .mobile-pager { display: none !important; }
+}
+
 
 /* =========================
    MOBILE
