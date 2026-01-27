@@ -8,83 +8,111 @@ const projects = {
     leftCol: [
       ["Client", "Deerfield Academy"],
       ["Role", "Design / Production"],
-      ["Year", "2025"]
+      ["Year", "2025"],
     ],
     rightCol: ["Short project description goes here. Keep it to a few lines."],
-    gallery: [{ type: "image", src: "images/Caguas/IMG_4121.jpg", alt: "Soy de Caguas" }]
+    gallery: [{ type: "image", src: "images/Caguas/IMG_4121.jpg", alt: "Soy de Caguas" }],
   },
 
   buttons: {
     title: "Buttons",
     hero: "images/London/IMG_6896.jpg",
-    leftCol: [["Project", "Button Collection"], ["Role", "Photography"], ["Year", "2024"]],
+    leftCol: [
+      ["Project", "Button Collection"],
+      ["Role", "Photography"],
+      ["Year", "2024"],
+    ],
     rightCol: ["Another description here."],
-    gallery: [{ type: "image", src: "images/London/IMG_6896.jpg", alt: "Buttons" }]
+    gallery: [{ type: "image", src: "images/London/IMG_6896.jpg", alt: "Buttons" }],
   },
 
   beer: {
     title: "Beer Can",
     hero: "images/Beer/can1.png",
-    leftCol: [["Role", "Design"], ["Year", "2024"]],
+    leftCol: [
+      ["Role", "Design"],
+      ["Year", "2024"],
+    ],
     rightCol: ["Description..."],
-    gallery: [{ type: "image", src: "images/Beer/can1.png", alt: "Beer can" }]
+    gallery: [{ type: "image", src: "images/Beer/can1.png", alt: "Beer can" }],
   },
 
   deerfield: {
     title: "Invitation",
     hero: "images/Deerfield/1797/IMG_3826.jpeg",
-    leftCol: [["Role", "Design"], ["Year", "2025"]],
+    leftCol: [
+      ["Role", "Design"],
+      ["Year", "2025"],
+    ],
     rightCol: ["Description..."],
-    gallery: [{ type: "image", src: "images/Deerfield/1797/IMG_3826.jpeg", alt: "Invitation" }]
+    gallery: [{ type: "image", src: "images/Deerfield/1797/IMG_3826.jpeg", alt: "Invitation" }],
   },
 
   punchy: {
     title: "Punchy Sans",
     hero: "images/Punchy/punchy5.png",
-    leftCol: [["Role", "Type"], ["Year", "2024"]],
+    leftCol: [
+      ["Role", "Type"],
+      ["Year", "2024"],
+    ],
     rightCol: ["Description..."],
-    gallery: [{ type: "image", src: "images/Punchy/punchy5.png", alt: "Punchy Sans" }]
+    gallery: [{ type: "image", src: "images/Punchy/punchy5.png", alt: "Punchy Sans" }],
   },
 
   kaleidoscope: {
     title: "Kaleidoscope",
     hero: "images/Kaleidoscope/IMG_5457.jpg",
-    leftCol: [["Role", "Design"], ["Year", "2024"]],
+    leftCol: [
+      ["Role", "Design"],
+      ["Year", "2024"],
+    ],
     rightCol: ["Description..."],
-    gallery: [{ type: "image", src: "images/Kaleidoscope/IMG_5457.jpg", alt: "Kaleidoscope" }]
+    gallery: [{ type: "image", src: "images/Kaleidoscope/IMG_5457.jpg", alt: "Kaleidoscope" }],
   },
 
   radical: {
     title: "Radical Modernisms",
     hero: "images/Radical/radical.png",
-    leftCol: [["Role", "Design"], ["Year", "2024"]],
+    leftCol: [
+      ["Role", "Design"],
+      ["Year", "2024"],
+    ],
     rightCol: ["Description..."],
-    gallery: [{ type: "image", src: "images/Radical/radical.png", alt: "Radical Modernisms" }]
+    gallery: [{ type: "image", src: "images/Radical/radical.png", alt: "Radical Modernisms" }],
   },
 
   buckland: {
     title: "Buckland Billiards",
     hero: "images/BBB/Mockups/cue.png",
-    leftCol: [["Role", "Design"], ["Year", "2024"]],
+    leftCol: [
+      ["Role", "Design"],
+      ["Year", "2024"],
+    ],
     rightCol: ["Description..."],
-    gallery: [{ type: "image", src: "images/BBB/Mockups/cue.png", alt: "Cue ball" }]
+    gallery: [{ type: "image", src: "images/BBB/Mockups/cue.png", alt: "Cue ball" }],
   },
 
   questions: {
     title: "7 Questions",
     hero: "images/Questions/IMG_4185.jpg",
-    leftCol: [["Role", "Design"], ["Year", "2024"]],
+    leftCol: [
+      ["Role", "Design"],
+      ["Year", "2024"],
+    ],
     rightCol: ["Description..."],
-    gallery: [{ type: "image", src: "images/Questions/IMG_4185.jpg", alt: "7 Questions spreads" }]
+    gallery: [{ type: "image", src: "images/Questions/IMG_4185.jpg", alt: "7 Questions spreads" }],
   },
 
   motion: {
     title: "Motion",
     hero: "images/Motion/LIAE/Debut-Album.mp4",
-    leftCol: [["Role", "Motion"], ["Year", "2024"]],
+    leftCol: [
+      ["Role", "Motion"],
+      ["Year", "2024"],
+    ],
     rightCol: ["Description..."],
-    gallery: [{ type: "video", src: "images/Motion/LIAE/Debut-Album.mp4" }]
-  }
+    gallery: [{ type: "video", src: "images/Motion/LIAE/Debut-Album.mp4" }],
+  },
 };
 
 // =========================
@@ -95,13 +123,18 @@ const detail = document.getElementById("project-detail");
 const main = document.getElementById("main");
 const homeLink = document.getElementById("home-link");
 
+// Mobile pager (MUST exist in your HTML)
+const pager = document.getElementById("mobile-pager");
+const pagerPrev = document.getElementById("pager-prev");
+const pagerNext = document.getElementById("pager-next");
+
 let currentSlug = null;
 let bottomObserver = null;
 
 // Sidebar order = whatever order the sidebar thumbs appear in
 function getProjectOrder() {
   return Array.from(document.querySelectorAll(".project-thumb.small[data-slug]"))
-    .map(el => el.dataset.slug)
+    .map((el) => el.dataset.slug)
     .filter(Boolean);
 }
 
@@ -118,13 +151,19 @@ function setModeHome({ push = true } = {}) {
   // Desktop shows featured grid; mobile hides it via CSS
   if (featuredGrid) featuredGrid.style.display = "";
 
+  // Hide pager on home
+  if (pager) {
+    pager.classList.remove("is-visible");
+    pager.setAttribute("aria-hidden", "true");
+  }
+
   // Clear active state
-  document.querySelectorAll(".project-thumb.is-active").forEach(el => el.classList.remove("is-active"));
+  document.querySelectorAll(".project-thumb.is-active").forEach((el) => el.classList.remove("is-active"));
 
   disconnectBottomObserver();
 
   if (push) history.pushState({}, "", "./");
-  main.scrollTop = 0;
+  if (main) main.scrollTop = 0;
 }
 
 function setModeProject() {
@@ -136,7 +175,7 @@ function setModeProject() {
 }
 
 // =========================
-// Pager visibility (only when at bottom)
+// Pager reveal (only when at bottom)
 // =========================
 function disconnectBottomObserver() {
   if (bottomObserver) {
@@ -146,29 +185,30 @@ function disconnectBottomObserver() {
 }
 
 function setupBottomReveal() {
-  const pager = detail.querySelector(".mobile-pager");
-  const sentinel = detail.querySelector("#pager-sentinel");
-  if (!pager || !sentinel) return;
+  if (!pager) return;
+
+  const sentinel = document.getElementById("pager-sentinel");
+  if (!sentinel) return;
 
   disconnectBottomObserver();
 
   bottomObserver = new IntersectionObserver(
     (entries) => {
-      const isAtBottom = entries.some(e => e.isIntersecting);
+      const isAtBottom = entries.some((e) => e.isIntersecting);
       pager.classList.toggle("is-visible", isAtBottom);
+      pager.setAttribute("aria-hidden", isAtBottom ? "false" : "true");
     },
-    { root: main, threshold: 0.1 }
+    {
+      root: main || null, // on desktop main scrolls; on mobile root=null (viewport) is fine
+      threshold: 0.1,
+    }
   );
 
   bottomObserver.observe(sentinel);
 }
 
-function updatePagerLinks() {
-  const pager = detail.querySelector(".mobile-pager");
-  if (!pager) return;
-
-  const prevLink = pager.querySelector('[data-nav="prev"]');
-  const nextLink = pager.querySelector('[data-nav="next"]');
+function updatePagerButtons() {
+  if (!pagerPrev || !pagerNext) return;
 
   const order = getProjectOrder();
   const idx = order.indexOf(currentSlug);
@@ -176,17 +216,11 @@ function updatePagerLinks() {
   const prevSlug = idx > 0 ? order[idx - 1] : null;
   const nextSlug = idx >= 0 && idx < order.length - 1 ? order[idx + 1] : null;
 
-  if (prevLink) {
-    prevLink.dataset.to = prevSlug || "";
-    prevLink.style.opacity = prevSlug ? "1" : "0.35";
-    prevLink.style.pointerEvents = prevSlug ? "auto" : "none";
-  }
+  pagerPrev.disabled = !prevSlug;
+  pagerNext.disabled = !nextSlug;
 
-  if (nextLink) {
-    nextLink.dataset.to = nextSlug || "";
-    nextLink.style.opacity = nextSlug ? "1" : "0.35";
-    nextLink.style.pointerEvents = nextSlug ? "auto" : "none";
-  }
+  pagerPrev.dataset.to = prevSlug || "";
+  pagerNext.dataset.to = nextSlug || "";
 }
 
 // =========================
@@ -200,7 +234,7 @@ function renderProject(slug, { push = true } = {}) {
   setModeProject();
 
   // Highlight active thumb (sidebar + featured grid)
-  document.querySelectorAll(".project-thumb[data-slug]").forEach(el => {
+  document.querySelectorAll(".project-thumb[data-slug]").forEach((el) => {
     el.classList.toggle("is-active", el.dataset.slug === slug);
   });
 
@@ -209,11 +243,11 @@ function renderProject(slug, { push = true } = {}) {
     .join("");
 
   const rightHtml = (p.rightCol || [])
-    .map(para => `<p>${para}</p>`)
+    .map((para) => `<p>${para}</p>`)
     .join("");
 
   const galleryHtml = (p.gallery || [])
-    .map(item => {
+    .map((item) => {
       if (item.type === "video") {
         return `
           <video controls playsinline>
@@ -239,19 +273,13 @@ function renderProject(slug, { push = true } = {}) {
 
     <!-- Sentinel: when this is visible, show pager -->
     <div id="pager-sentinel" style="height: 1px;"></div>
-
-    <!-- Mobile-only pager (Cargo-like: only visible at bottom) -->
-    <div class="mobile-pager">
-      <a href="#" data-nav="prev">← Prev</a>
-      <a href="#" data-nav="next">Next →</a>
-    </div>
   `;
 
   if (push) history.pushState({ slug }, "", `./#${slug}`);
 
-  main.scrollTop = 0;
+  if (main) main.scrollTop = 0;
 
-  updatePagerLinks();
+  updatePagerButtons();
   setupBottomReveal();
 }
 
@@ -262,19 +290,10 @@ function renderProject(slug, { push = true } = {}) {
 // Click any thumbnail (featured grid or sidebar)
 document.addEventListener("click", (e) => {
   const thumb = e.target.closest(".project-thumb[data-slug]");
-  if (thumb) {
-    const slug = thumb.dataset.slug;
-    if (slug) renderProject(slug);
-    return;
-  }
+  if (!thumb) return;
 
-  // Pager clicks
-  const pagerLink = e.target.closest(".mobile-pager a[data-nav]");
-  if (pagerLink) {
-    e.preventDefault();
-    const to = pagerLink.dataset.to;
-    if (to) renderProject(to);
-  }
+  const slug = thumb.dataset.slug;
+  if (slug) renderProject(slug);
 });
 
 // Name goes home
@@ -282,6 +301,18 @@ if (homeLink) {
   homeLink.addEventListener("click", (e) => {
     e.preventDefault();
     setModeHome();
+  });
+}
+
+// Pager buttons click
+if (pager) {
+  pager.addEventListener("click", (e) => {
+    const btn = e.target.closest("button[data-to]");
+    if (!btn) return;
+
+    e.preventDefault();
+    const to = btn.dataset.to;
+    if (to) renderProject(to);
   });
 }
 
