@@ -2,6 +2,34 @@
 // Project data
 // =========================
 const projects = {
+about: {
+  title: "About",
+  leftCol: [
+    ["Experience", "<br> Deerfield Academy // 2023 → Current <br> Tees & More // Summer 2022"],
+    ["Education", "<br> UConn (go huskies) // 2023 <br> CSM (London, innit) // Fall 2022"],
+    ["Likes", "<br> Vintage photobooths, collecting owl trinkets, modern soul music, & guinness"],
+    [
+  "What I'm currently listening to",
+  `<br><a href="https://open.spotify.com/playlist/5xSGEiqf37kZJHW5fbbrZO?si=4a9e6de1827449a6" target="_blank" rel="noopener">
+    For my spotify friends only ;-)
+  </a>`
+],
+    [
+  "Connect",
+  `<br><a href="https://www.linkedin.com/in/jojo-delgado" target="_blank" rel="noopener">
+    Linkedin
+  </a>`
+],
+
+  ],
+  rightCol: [
+    `I’m a graphic designer who’s drawn to concept-driven work, thoughtful systems, and projects that live somewhere between structure and play. I’m especially interested in how design can translate ideas, research, and stories into visuals that feel intuitive, engaging, and human.`,
+    `<img class="about-photo" src="images/About/photobooth.jpg" alt="Jojo photo">`,
+  ],
+  // no hero
+  // no gallery
+},
+
   caguas: {
     title: "Soy de Caguas",
     hero: "images/Caguas/IMG_4121.jpg",
@@ -65,7 +93,7 @@ const projects = {
     ],
   },
 
-  deerfield: {
+  game: {
     title: "Game",
     hero: "images/Deerfield/Game/gamebox-outside.jpg",
     leftCol: [
@@ -85,7 +113,6 @@ const projects = {
       { type: "image", src: "images/Deerfield/Game/gamebox-cover.jpg", alt: "Game box" },
       { type: "image", src: "images/Deerfield/Game/gamebox-close.jpg", alt: "Game box" },
       { type: "image", src: "images/Deerfield/Game/gamebox-open.jpg", alt: "Game box" },
-      { type: "image", src: "images/Deerfield/Game/gamebox-outside.jpg", alt: "Game box", full: true },
     ],
   },
 
@@ -94,14 +121,20 @@ const projects = {
     hero: "images/Punchy/punchy5.png",
     leftCol: [
       ["Title", "Punchy Sans"],
-      ["Project", "Type"],
+      ["Project", "Type Design"],
     ],
     rightCol: [
-      `Description...`,
+      `Punchy Sans is a custom typeface developed through an exploration of ecography—the relationship between language, environment, and material process. Instead of designing purely on screen, I physically constructed the letterforms by hole-punching each character and assembling them into a large, taped specimen sheet. By using light as a compositional tool, the punched forms cast shadows that reveal a second, hidden typeface beneath the first, allowing both to exist simultaneously. The resulting specimen turns type into a spatial, tactile experience, where absence, material, and environment play as much of a role as the letterforms themselves. <br>
+      <a class="project-award" href="https://winning.work/work/2331-punchy-sans-typeface" target="_blank" rel="noopener">
+         CADC Excellence Award 2023
+       </a>`,
     ],
     galleryFullFirst: false,
     gallery: [
-      { type: "image", src: "images/Punchy/punchy5.png", alt: "Punchy Sans", full: true },
+      { type: "image", src: "images/Punchy/punchy4.png", alt: "Punchy Sans", full: true },
+      { type: "image", src: "images/Punchy/punchy1.png", alt: "Punchy Sans" },
+      { type: "image", src: "images/Punchy/punchy2.png", alt: "Punchy Sans" },
+      { type: "image", src: "images/Punchy/punchy3.png", alt: "Punchy Sans", full: true },
     ],
   },
 
@@ -110,30 +143,65 @@ const projects = {
     hero: "images/Kaleidoscope/IMG_5457.jpg",
     leftCol: [
       ["Title", "Kaleidoscope"],
-      ["Project", "Design"],
+      ["Project", "Industrial Design"],
     ],
     rightCol: [
-      `Description...`,
+      `This project explores interaction, movement, and light as core design elements. Designed as a physical, hands-on experience, the piece features two large, rotating color wheels made from layered acrylic that invite viewers to touch, spin, and experiment. When light passes through the wheels, overlapping colors cast shifting, kaleidoscopic shadows onto the surrounding space. By changing the direction and speed of each wheel, viewers actively shape the visual outcome, turning the piece into a constantly evolving display. The goal was to create something intuitive and playful—an object that rewards curiosity and encourages engagement through simple, tactile interaction.`,
     ],
     galleryFullFirst: false,
     gallery: [
-      { type: "image", src: "images/Kaleidoscope/IMG_5457.jpg", alt: "Kaleidoscope", full: true },
+      { type: "image", src: "images/Kaleidoscope/IMG_5441.jpg", alt: "Kaleidoscope" },
+      { type: "image", src: "images/Kaleidoscope/IMG_5448.jpg", alt: "Kaleidoscope" },
+      { type: "image", src: "images/Kaleidoscope/IMG_5442.jpg", alt: "Kaleidoscope", full: true },
+      { type: "image", src: "images/Kaleidoscope/IMG_5452.jpg", alt: "Kaleidoscope" },
+      { type: "image", src: "images/Kaleidoscope/IMG_5451.jpg", alt: "Kaleidoscope" },
+      { type: "image", src: "images/Kaleidoscope/IMG_5449.jpg", alt: "Kaleidoscope", full: true },
     ],
   },
+
+
+ doodles: {
+    title: "Deerfield Doodles",
+    hero: "images/Deerfield/Doodles/IMG_4127.jpeg",
+    leftCol: [
+      ["Client", "Deerfield Academy"],
+      ["Project", "Admissions swag"],
+    ],
+    rightCol: [
+      `Deerfield Doodles is an illustrated visual system created for Deerfield Academy that brings together school landmarks, traditions, and everyday moments into a playful, cohesive language. Designed to feel youthful and approachable for students while still polished enough for parents and alumni, the illustrations balance charm with clarity. The system was intentionally flexible, allowing the artwork to scale across a wide range of applications—from tote bags and chocolate bars to water bottles and beach towels—without losing cohesion. By creating a modular set of icons and scenes, the project supports consistent storytelling across merchandise and communications while keeping the tone light, energetic, and welcoming.`,
+    ],
+    galleryFullFirst: false,
+    gallery: [
+      { type: "image", src: "images/Deerfield/Doodles/IMG_4138.jpeg", alt: "Tote bag" },
+      { type: "image", src: "images/Deerfield/Doodles/IMG_4136.jpeg", alt: "Tote bag" },
+      { type: "image", src: "images/Deerfield/Doodles/tuck1.PNG", alt: "chcolate bar" },
+      { type: "image", src: "images/Deerfield/Doodles/tuck3.PNG", alt: "chocolate bar" },
+      { type: "image", src: "images/Deerfield/Doodles/towel.png", alt: "beach towel", full: true },
+      { type: "image", src: "images/Deerfield/Doodles/IMG_4141.jpeg", alt: "water bottle" },
+      { type: "image", src: "images/Deerfield/Doodles/IMG_6233.jpeg", alt: "towels" },
+
+    ],
+  },
+
 
   radical: {
     title: "Radical Modernisms",
     hero: "images/Radical/radical.png",
     leftCol: [
       ["Title", "Radical Modernisms"],
-      ["Project", "Design"],
+      ["Project", "Publication"],
     ],
     rightCol: [
-      `Description...`,
+      `Radical Modernisms is a collaborative publication project inspired by the work and teaching of Dan Friedman, whose experimental approach to type and structure encouraged designers to challenge conventions. For this book, each contributor designed an individual eight-spread section, exploring personal interpretations of modernism through editorial and typographic decisions. The project required coordination across multiple contributors while maintaining a cohesive editorial rhythm and visual language, balancing individual expression with shared structure. The book was hand-sewn, reinforcing its crafted, process-driven nature and reflecting a mindful engagement with material and form. <br>
+      <a class="project-award" href="https://winning.work/work/1995-radical-modernisms" target="_blank" rel="noopener">
+         CADC Spirit of Creativity Award 2022
+       </a>`,,
     ],
     galleryFullFirst: false,
     gallery: [
-      { type: "image", src: "images/Radical/radical.png", alt: "Radical Modernisms", full: true },
+      { type: "image", src: "images/Radical/IMG_3778.png", alt: "Radical Modernisms", full: true },
+      { type: "image", src: "images/Radical/IMG_3779.png", alt: "Radical Modernisms" },
+      { type: "image", src: "images/Radical/IMG_3780.png", alt: "Radical Modernisms" },
     ],
   },
 
@@ -141,49 +209,39 @@ const projects = {
     title: "Buckland Billiards",
     hero: "images/BBB/Mockups/cue.png",
     leftCol: [
-      ["Title", "Buckland Billiards"],
+      ["Client", "Buckland Billiards"],
       ["Project", "Branding / Design"],
     ],
     rightCol: [
-      `Description...`,
+      `Buckland Billiards & Bar needed a refreshed visual identity that better represented the space and avoided unintended visual distractions present in the previous logo. The rebrand focused on clarity, balance, and legibility, simplifying the mark while retaining cues tied to billiards and bar culture. Through refined typography and a more intentional symbol system, the updated logo feels confident and approachable rather than confusing or overly literal. The result is a cleaner, more versatile identity that works across signage, print, and digital applications while presenting the business in a way that feels modern, intentional, and aligned with its atmosphere.`,
     ],
     galleryFullFirst: false,
     gallery: [
-      { type: "image", src: "images/BBB/Mockups/cue.png", alt: "Buckland Billiards cue ball", full: true },
+      { type: "image", src: "images/BBB/Mockups/shirt.png", alt: "Buckland Billiards brand" },
+      { type: "image", src: "images/BBB/Mockups/coaster.png", alt: "Buckland Billiards brand" },
+      { type: "image", src: "images/BBB/Mockups/napkins.png", alt: "Buckland Billiards brand" },
+      { type: "image", src: "images/BBB/Mockups/hat.png", alt: "Buckland Billiards brand" },
+      { type: "image", src: "images/BBB/Mockups/paper.png", alt: "Buckland Billiards brand" },
+      { type: "image", src: "images/BBB/Mockups/beer.png", alt: "Buckland Billiards brand" },
     ],
   },
 
-  questions: {
-    title: "7 Questions",
-    hero: "images/Questions/IMG_4185.jpg",
-    leftCol: [
-      ["Title", "7 Questions"],
-      ["Project", "Publication"],
-    ],
-    rightCol: [
-      `Description...`,
-    ],
-    galleryFullFirst: false,
-    gallery: [
-      { type: "image", src: "images/Questions/IMG_4185.jpg", alt: "7 Questions spreads", full: true },
-    ],
-  },
 
   motion: {
     title: "Motion",
-    hero: "images/Motion/LIAE/Debut-Album.mp4",
     leftCol: [
-      ["Title", "Motion"],
-      ["Project", "Video / Motion"],
+      ["Project", "Motion graphics"],
     ],
     rightCol: [
-      `Description...`,
+      `A collection of motion graphics and looping animations created in After Effects, focused on translating static design concepts into movement through timing, rhythm, and form.`,
     ],
     galleryFullFirst: false,
     gallery: [
-      { type: "video", src: "images/Motion/LIAE/Debut-Album.mp4", full: true },
-      { type: "video", src: "images/Motion/LIAE/Debut-Album.mp4" },
-      { type: "video", src: "images/Motion/LIAE/Debut-Album.mp4" },
+      { type: "video", src: "images/Motion/fizzi/fizzi-music.mp4", loop: true },
+      { type: "video", src: "images/Motion/taco/taco-tuesday.mp4", loop: true },
+      { type: "video", src: "images/Motion/LIAE/FUI-Render.mp4", loop: true },
+      { type: "video", src: "images/Motion/LIAE/Astral-Projection.mp4", loop: true },
+      { type: "video", src: "images/Motion/LIAE/Parallax.mp4", full: true, loop: true  },
     ],
   },
 };
@@ -195,6 +253,8 @@ const featuredGrid = document.getElementById("featured-grid");
 const detail = document.getElementById("project-detail");
 const main = document.getElementById("main");
 const homeLink = document.getElementById("home-link");
+const aboutLink = document.getElementById("about-link");
+
 
 const pager = document.getElementById("mobile-pager");
 const pagerPrev = document.getElementById("pager-prev");
@@ -323,6 +383,13 @@ function renderProject(slug, { push = true } = {}) {
   const p = projects[slug];
   if (!p) return;
 
+  if (pager) {
+    pager.classList.remove("is-visible");
+    pager.setAttribute("aria-hidden", "true");
+  }
+  disconnectBottomObserver();
+
+
   currentSlug = slug;
   setModeProject();
 
@@ -334,8 +401,14 @@ function renderProject(slug, { push = true } = {}) {
     .join("");
 
   const rightHtml = (p.rightCol || [])
-    .map((t) => `<p>${t}</p>`)
-    .join("");
+  .map((t) => {
+    const s = String(t).trim();
+    // If they gave raw HTML (like <img ...>), don't wrap in <p>
+    if (s.startsWith("<")) return s;
+    return `<p>${t}</p>`;
+  })
+  .join("");
+
 
   const galleryHtml = (p.gallery || [])
     .map((item, i) => {
@@ -343,14 +416,17 @@ function renderProject(slug, { push = true } = {}) {
       const cls = `gallery-item${isFull ? " full" : ""}`;
 
       if (item.type === "video") {
-        return `
-          <div class="${cls}">
-            <video controls playsinline>
-              <source src="${item.src}" type="video/mp4">
-            </video>
-          </div>
-        `;
-      }
+  return `<div class="${cls}">
+    <video
+      controls
+      playsinline
+      ${item.loop ? "loop" : ""}
+    >
+      <source src="${item.src}" type="video/mp4">
+    </video>
+  </div>`;
+}
+
 
       return `
         <div class="${cls}">
@@ -360,15 +436,20 @@ function renderProject(slug, { push = true } = {}) {
     })
     .join("");
 
-  detail.innerHTML = `
-    <img class="project-hero" src="${p.hero}" alt="${p.title}">
-    <div class="project-meta">
-      <div>${leftHtml}</div>
-      <div>${rightHtml}</div>
-    </div>
-    <div class="project-gallery">${galleryHtml}</div>
-    <div id="pager-sentinel" style="height:1px"></div>
-  `;
+  const heroHtml = p.hero
+  ? `<img class="project-hero" src="${p.hero}" alt="${p.title}">`
+  : "";
+
+detail.innerHTML = `
+  ${heroHtml}
+  <div class="project-meta">
+    <div>${leftHtml}</div>
+    <div>${rightHtml}</div>
+  </div>
+  <div class="project-gallery">${galleryHtml}</div>
+  <div id="pager-sentinel" style="height:1px"></div>
+`;
+
 
   if (main) main.scrollTop = 0;
   window.scrollTo(0, 0);
@@ -399,6 +480,13 @@ if (homeLink) {
   homeLink.addEventListener("click", (e) => {
     e.preventDefault();
     setModeHome();
+  });
+}
+
+if (aboutLink) {
+  aboutLink.addEventListener("click", (e) => {
+    e.preventDefault();
+    renderProject("about");
   });
 }
 

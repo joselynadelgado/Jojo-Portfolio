@@ -23,6 +23,12 @@ body {
   --nav-hover: #ffffff; /* white hover for nav */
 }
 
+strong {
+  color: var(--nav-link); /* your green */
+  font-weight: normal;    /* optional: keeps it clean, not shouty */
+}
+
+
 body {
   font-family: Helvetica, sans-serif;
   font-size: 14px;
@@ -172,6 +178,15 @@ a:hover {
 .project-thumb.is-active::after {
   border-color: var(--hover);
 }
+
+
+.about-photo {
+  width: 100px;
+  height: auto;
+  display: block;
+  margin: 12px 0 0;
+}
+
 
 /* =========================
    RIGHT SIDEBAR (DESKTOP)
