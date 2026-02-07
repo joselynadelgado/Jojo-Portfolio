@@ -10,10 +10,10 @@ const projects = {
       ["Project", "Publication"],
     ],
     rightCol: [
-      `A conversation with my grandmother about her upbringing in Puerto Rico and experience moving to the US.<br>
-       <a class="project-award" href="https://winning.work/work/2300-i-was-born-in-caguas" target="_blank" rel="noopener">
+      `<i>Soy de Caguas</i> began as an interview-based publication exploring personal history through conversation. I interviewed my grandmother about her upbringing in Puerto Rico and her experience moving to the United States, then translated that dialogue into a printed narrative. When closed, the book reveals layered edges—serving as a metaphor for peeling back the layers of her story. Each page includes full translations of english and spanish, and archival photographs from her personal collection were used throughout to ground the publication in memory and material history.<br>
+      <a class="project-award" href="https://winning.work/work/2300-i-was-born-in-caguas" target="_blank" rel="noopener">
          CADC Gold Award, 2023
-       </a>`
+       </a>`,
     ],
     galleryFullFirst: false,
     gallery: [
@@ -28,73 +28,155 @@ const projects = {
   buttons: {
     title: "Buttons",
     hero: "images/London/IMG_6896.jpg",
-    leftCol: [["Project", "Button Collection"], ["Role", "Photography"], ["Year", "2024"]],
-    rightCol: ["Another description here."],
-    gallery: [{ type: "image", src: "images/London/IMG_6896.jpg", alt: "Buttons" }],
+    leftCol: [
+      ["Title", "London Circles"],
+      ["Project", "Publication, Buttons"],
+    ],
+    rightCol: [
+      `<i>London Circles</i> began as a self-directed exploration of collecting and organizing visual material in public space. I photographed every circle I encountered throughout London—chosen for its simplicity and frequency—resulting in an archive of over 100 images. The challenge was to impose structure without diminishing variation, allowing subtle differences in surface, context, and use to emerge through comparison. I designed two publications in which each spread features a single, full-bleed circle, encouraging a slow, sequential reading of the collection, and extended the system into a series of hand-pressed buttons to explore how repetition and constraint translate into physical form.<br>
+       <a class="project-award" href="https://winning.work/work/2313-london-circles" target="_blank" rel="noopener">
+         CADC Silver Award, 2023
+       </a>`,
+    ],
+    galleryFullFirst: false,
+    gallery: [
+      { type: "image", src: "images/London/IMG_4189.jpeg", alt: "London Circles book covers" },
+      { type: "image", src: "images/London/IMG_4192.jpeg", alt: "London Circles book covers" },
+      { type: "image", src: "images/London/IMG_4196.jpeg", alt: "London Circles spreads", full: true },
+      { type: "image", src: "images/London/IMG_6897.jpg", alt: "London Circles buttons" },
+      { type: "image", src: "images/London/IMG_6946.jpeg", alt: "London Circles open studios" },
+    ],
   },
 
   beer: {
     title: "Beer Can",
     hero: "images/Beer/can1.png",
-    leftCol: [["Role", "Design"], ["Year", "2024"]],
-    rightCol: ["Description..."],
-    gallery: [{ type: "image", src: "images/Beer/can1.png", alt: "Beer can" }],
+    leftCol: [
+      ["Client", "Recess in Chicago"],
+      ["Project", "Packaging design"],
+    ],
+    rightCol: [
+      `This beer can design was created for Recess, with the goal of visually expressing the brand’s idea of recess as a moment of escape. I leaned into a surreal, celestial direction, using koi fish swimming through a cloud-filled night sky to suggest a dreamlike departure from everyday reality. The hazy purple palette and floating elements reinforce an in-between state—part playful, part mysterious—mirroring the feeling of stepping briefly outside routine. The result is a bold, illustrative label that balances whimsy and atmosphere while remaining visually distinctive on the shelf.`,
+    ],
+    galleryFullFirst: false,
+    gallery: [
+      { type: "image", src: "images/Beer/can2.png", alt: "Beer can artwork" },
+      { type: "image", src: "images/Beer/can4.png", alt: "Beer can artwork" },
+    ],
   },
 
   deerfield: {
     title: "Invitation",
     hero: "images/Deerfield/1797/IMG_3826.jpeg",
-    leftCol: [["Role", "Design"], ["Year", "2025"]],
-    rightCol: ["Description..."],
-    gallery: [{ type: "image", src: "images/Deerfield/1797/IMG_3826.jpeg", alt: "Invitation" }],
+    leftCol: [
+      ["Title", "Invitation"],
+      ["Project", "Print / Design"],
+    ],
+    rightCol: [
+      `Description...`,
+    ],
+    galleryFullFirst: false,
+    gallery: [
+      { type: "image", src: "images/Deerfield/1797/IMG_3826.jpeg", alt: "Invitation", full: true },
+    ],
   },
 
   punchy: {
     title: "Punchy Sans",
     hero: "images/Punchy/punchy5.png",
-    leftCol: [["Role", "Type"], ["Year", "2024"]],
-    rightCol: ["Description..."],
-    gallery: [{ type: "image", src: "images/Punchy/punchy5.png", alt: "Punchy Sans" }],
+    leftCol: [
+      ["Title", "Punchy Sans"],
+      ["Project", "Type"],
+    ],
+    rightCol: [
+      `Description...`,
+    ],
+    galleryFullFirst: false,
+    gallery: [
+      { type: "image", src: "images/Punchy/punchy5.png", alt: "Punchy Sans", full: true },
+    ],
   },
 
   kaleidoscope: {
     title: "Kaleidoscope",
     hero: "images/Kaleidoscope/IMG_5457.jpg",
-    leftCol: [["Role", "Design"], ["Year", "2024"]],
-    rightCol: ["Description..."],
-    gallery: [{ type: "image", src: "images/Kaleidoscope/IMG_5457.jpg", alt: "Kaleidoscope" }],
+    leftCol: [
+      ["Title", "Kaleidoscope"],
+      ["Project", "Design"],
+    ],
+    rightCol: [
+      `Description...`,
+    ],
+    galleryFullFirst: false,
+    gallery: [
+      { type: "image", src: "images/Kaleidoscope/IMG_5457.jpg", alt: "Kaleidoscope", full: true },
+    ],
   },
 
   radical: {
     title: "Radical Modernisms",
     hero: "images/Radical/radical.png",
-    leftCol: [["Role", "Design"], ["Year", "2024"]],
-    rightCol: ["Description..."],
-    gallery: [{ type: "image", src: "images/Radical/radical.png", alt: "Radical Modernisms" }],
+    leftCol: [
+      ["Title", "Radical Modernisms"],
+      ["Project", "Design"],
+    ],
+    rightCol: [
+      `Description...`,
+    ],
+    galleryFullFirst: false,
+    gallery: [
+      { type: "image", src: "images/Radical/radical.png", alt: "Radical Modernisms", full: true },
+    ],
   },
 
   buckland: {
     title: "Buckland Billiards",
     hero: "images/BBB/Mockups/cue.png",
-    leftCol: [["Role", "Design"], ["Year", "2024"]],
-    rightCol: ["Description..."],
-    gallery: [{ type: "image", src: "images/BBB/Mockups/cue.png", alt: "Cue ball" }],
+    leftCol: [
+      ["Title", "Buckland Billiards"],
+      ["Project", "Branding / Design"],
+    ],
+    rightCol: [
+      `Description...`,
+    ],
+    galleryFullFirst: false,
+    gallery: [
+      { type: "image", src: "images/BBB/Mockups/cue.png", alt: "Buckland Billiards cue ball", full: true },
+    ],
   },
 
   questions: {
     title: "7 Questions",
     hero: "images/Questions/IMG_4185.jpg",
-    leftCol: [["Role", "Design"], ["Year", "2024"]],
-    rightCol: ["Description..."],
-    gallery: [{ type: "image", src: "images/Questions/IMG_4185.jpg", alt: "7 Questions spreads" }],
+    leftCol: [
+      ["Title", "7 Questions"],
+      ["Project", "Publication"],
+    ],
+    rightCol: [
+      `Description...`,
+    ],
+    galleryFullFirst: false,
+    gallery: [
+      { type: "image", src: "images/Questions/IMG_4185.jpg", alt: "7 Questions spreads", full: true },
+    ],
   },
 
   motion: {
     title: "Motion",
     hero: "images/Motion/LIAE/Debut-Album.mp4",
-    leftCol: [["Role", "Motion"], ["Year", "2024"]],
-    rightCol: ["Description..."],
-    gallery: [{ type: "video", src: "images/Motion/LIAE/Debut-Album.mp4" }],
+    leftCol: [
+      ["Title", "Motion"],
+      ["Project", "Video / Motion"],
+    ],
+    rightCol: [
+      `Description...`,
+    ],
+    galleryFullFirst: false,
+    gallery: [
+      { type: "video", src: "images/Motion/LIAE/Debut-Album.mp4", full: true },
+      { type: "video", src: "images/Motion/LIAE/Debut-Album.mp4" },
+      { type: "video", src: "images/Motion/LIAE/Debut-Album.mp4" },
+    ],
   },
 };
 
@@ -154,6 +236,7 @@ function closeLightbox() {
   lightbox.classList.remove("is-open");
   lightbox.setAttribute("aria-hidden", "true");
   lightboxImg.src = "";
+  lightboxImg.alt = "";
   document.body.style.overflow = "";
 }
 
@@ -166,6 +249,7 @@ function setModeHome({ push = true } = {}) {
 
   currentSlug = null;
   detail.innerHTML = "";
+
   if (featuredGrid) featuredGrid.style.display = "";
 
   if (pager) {
@@ -212,10 +296,14 @@ function setupBottomReveal() {
 }
 
 function updatePagerButtons() {
+  if (!pagerPrev || !pagerNext) return;
+
   const order = getProjectOrder();
   const idx = order.indexOf(currentSlug);
+
   pagerPrev.disabled = idx <= 0;
   pagerNext.disabled = idx === -1 || idx >= order.length - 1;
+
   pagerPrev.dataset.to = order[idx - 1] || "";
   pagerNext.dataset.to = order[idx + 1] || "";
 }
@@ -233,31 +321,50 @@ function renderProject(slug, { push = true } = {}) {
   document.querySelectorAll(".project-thumb[data-slug]")
     .forEach((el) => el.classList.toggle("is-active", el.dataset.slug === slug));
 
-  const leftHtml = (p.leftCol || []).map(
-    ([l, v]) => `<p><strong>${l}:</strong> ${v}</p>`
-  ).join("");
+  const leftHtml = (p.leftCol || [])
+    .map(([l, v]) => `<p><strong>${l}:</strong> ${v}</p>`)
+    .join("");
 
-  const rightHtml = (p.rightCol || []).map((t) => `<p>${t}</p>`).join("");
+  const rightHtml = (p.rightCol || [])
+    .map((t) => `<p>${t}</p>`)
+    .join("");
 
-  const galleryHtml = (p.gallery || []).map((item, i) => {
-    const isFull = !!item.full || (i === 0 && p.galleryFullFirst !== false);
-    const cls = `gallery-item${isFull ? " full" : ""}`;
+  const galleryHtml = (p.gallery || [])
+    .map((item, i) => {
+      const isFull = !!item.full || (i === 0 && p.galleryFullFirst !== false);
+      const cls = `gallery-item${isFull ? " full" : ""}`;
 
-    if (item.type === "video") {
-      return `<div class="${cls}"><video controls playsinline><source src="${item.src}" type="video/mp4"></video></div>`;
-    }
-    return `<div class="${cls}"><img src="${item.src}" alt="${item.alt || ""}"></div>`;
-  }).join("");
+      if (item.type === "video") {
+        return `
+          <div class="${cls}">
+            <video controls playsinline>
+              <source src="${item.src}" type="video/mp4">
+            </video>
+          </div>
+        `;
+      }
+
+      return `
+        <div class="${cls}">
+          <img src="${item.src}" alt="${item.alt || ""}">
+        </div>
+      `;
+    })
+    .join("");
 
   detail.innerHTML = `
     <img class="project-hero" src="${p.hero}" alt="${p.title}">
-    <div class="project-meta"><div>${leftHtml}</div><div>${rightHtml}</div></div>
+    <div class="project-meta">
+      <div>${leftHtml}</div>
+      <div>${rightHtml}</div>
+    </div>
     <div class="project-gallery">${galleryHtml}</div>
     <div id="pager-sentinel" style="height:1px"></div>
   `;
 
   if (main) main.scrollTop = 0;
   window.scrollTo(0, 0);
+
   if (push) history.pushState({ slug }, "", `./#${slug}`);
 
   updatePagerButtons();
@@ -268,12 +375,14 @@ function renderProject(slug, { push = true } = {}) {
 // Events
 // =========================
 document.addEventListener("click", (e) => {
+  // Lightbox: click gallery images
   const galleryImg = e.target.closest(".project-gallery img");
   if (galleryImg) {
     openLightbox(galleryImg.src, galleryImg.alt || "");
     return;
   }
 
+  // Navigation: click thumbs
   const thumb = e.target.closest(".project-thumb[data-slug]");
   if (thumb) renderProject(thumb.dataset.slug);
 });
@@ -308,7 +417,8 @@ window.addEventListener("keydown", (e) => {
 
 window.addEventListener("popstate", (e) => {
   const slug = e.state?.slug || location.hash.replace("#", "");
-  slug && projects[slug] ? renderProject(slug, { push: false }) : setModeHome({ push: false });
+  if (slug && projects[slug]) renderProject(slug, { push: false });
+  else setModeHome({ push: false });
 });
 
 // =========================
@@ -316,7 +426,6 @@ window.addEventListener("popstate", (e) => {
 // =========================
 (function init() {
   const slug = location.hash.replace("#", "");
-  slug && projects[slug]
-    ? renderProject(slug, { push: false })
-    : setModeHome({ push: false });
+  if (slug && projects[slug]) renderProject(slug, { push: false });
+  else setModeHome({ push: false });
 })();
