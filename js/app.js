@@ -24,6 +24,7 @@ about: {
   ],
   rightCol: [
     `I’m a graphic designer who’s drawn to concept-driven work, thoughtful systems, and projects that live somewhere between structure and play. I’m especially interested in how design can translate ideas, research, and stories into visuals that feel intuitive, engaging, and human.`,
+    `"A [Jill] of all trades, but a master of none, is better than a master of one."`,
     `<img class="about-photo" src="images/About/photobooth.jpg" alt="Jojo photo">`,
   ],
   // no hero
