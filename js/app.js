@@ -66,18 +66,26 @@ const projects = {
   },
 
   deerfield: {
-    title: "Invitation",
-    hero: "images/Deerfield/1797/IMG_3826.jpeg",
+    title: "Game",
+    hero: "images/Deerfield/Game/gamebox-outside.jpg",
     leftCol: [
-      ["Title", "Invitation"],
-      ["Project", "Print / Design"],
+      ["Client", "Deerfield Academy"],
+      ["Art Director", "Brent Hale"],
     ],
     rightCol: [
-      `Description...`,
+      `As part of Deerfield Academy’s admissions acceptance package, we created an immersive, interactive experience designed to introduce admitted students to campus life before they arrived. Working under an art director, I led the graphic design for 101 Things to Do at Deerfield Before You Graduate, a custom board game that reframed the acceptance letter as an experience rather than a piece of mail. The project combined playful illustration, clear information design, and production-forward details—including custom game components, foil-printed artwork, and accompanying merch—to balance excitement for students with clarity for families. The final package generated significant engagement across social media and won multiple awards, reinforcing Deerfield’s sense of community while making the decision to enroll feel personal and celebratory.<br>
+      <a class="project-award" href="https://www.case.org/awards/circle-excellence/2025/101-things-never-bored-boarding-school-board-game" target="_blank" rel="noopener">
+         CASE Gold Award, 2025
+       </a> <br>
+       <a class="project-award" href="https://www.idesignawards.com/winners/zoom.php?eid=9-59167-24" target="_blank" rel="noopener">
+         IDA Honorable Mention Award 2025
+       </a>`,
     ],
-    galleryFullFirst: false,
     gallery: [
-      { type: "image", src: "images/Deerfield/1797/IMG_3826.jpeg", alt: "Invitation", full: true },
+      { type: "image", src: "images/Deerfield/Game/gamebox-cover.jpg", alt: "Game box" },
+      { type: "image", src: "images/Deerfield/Game/gamebox-close.jpg", alt: "Game box" },
+      { type: "image", src: "images/Deerfield/Game/gamebox-open.jpg", alt: "Game box" },
+      { type: "image", src: "images/Deerfield/Game/gamebox-outside.jpg", alt: "Game box", full: true },
     ],
   },
 
