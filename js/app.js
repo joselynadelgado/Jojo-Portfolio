@@ -455,7 +455,15 @@ detail.innerHTML = `
   if (main) main.scrollTop = 0;
   window.scrollTo(0, 0);
 
-  if (push) history.pushState({ slug }, "", `./#${slug}`);
+  if (push) {
+  if (slug === "about") {
+    history.pushState({ slug }, "", "./#about");
+  } else {
+    // keep projects clean so refresh goes home
+    history.pushState({ slug }, "", "./");
+  }
+}
+
 
   updatePagerButtons();
   setupBottomReveal();
