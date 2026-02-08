@@ -442,6 +442,8 @@ a:hover {
   height: 16px;
   fill: currentColor;
   flex-shrink: 0;
+  fill: currentColor;
+  stroke: currentColor;
 }
 
 
