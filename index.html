@@ -89,9 +89,27 @@
 
       <!-- <!!> Mobile-only pager: your JS can toggle .is-visible when at bottom -->
       <div class="mobile-pager" id="mobile-pager" aria-hidden="true">
-        <button class="pager-btn" id="pager-prev" type="button">← Prev</button>
-        <button class="pager-btn" id="pager-next" type="button">Next →</button>
-      </div>
+  <button class="pager-btn" id="pager-prev" type="button">
+    <svg class="pager-arrow"
+         xmlns="http://www.w3.org/2000/svg"
+         viewBox="0 0 256 256"
+         aria-hidden="true">
+      <path d="M56,128l88-88v56h56v64h-56v56Z"></path>
+    </svg>
+    Prev
+  </button>
+
+  <button class="pager-btn" id="pager-next" type="button">
+    Next
+    <svg class="pager-arrow"
+         xmlns="http://www.w3.org/2000/svg"
+         viewBox="0 0 256 256"
+         aria-hidden="true">
+      <path d="M200,128l-88,88v-56H56V96h56V40Z"></path>
+    </svg>
+  </button>
+</div>
+
 
     </main>
 
