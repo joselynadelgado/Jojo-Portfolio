@@ -480,6 +480,37 @@ a:hover {
   }
 }
 
+/* Mobile pager BUTTON styling (you use <button>, not <a>) */
+.pager-btn {
+  background: none;
+  border: none;
+  padding: 0;
+
+  font: inherit;
+  color: var(--text);
+  cursor: pointer;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 8px; /* space between arrow + text */
+}
+
+.pager-btn:hover {
+  color: var(--hover); /* or white if you want */
+}
+
+.pager-arrow {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.pager-arrow path {
+  fill: currentColor;
+}
+
+
 /* =========================
    MOBILE
 ========================= */
