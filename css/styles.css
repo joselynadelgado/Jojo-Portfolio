@@ -437,6 +437,13 @@ a:hover {
   color: var(--hover);
 }
 
+.pager-arrow {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
 
 .pager-btn:disabled {
   opacity: 0.35;
