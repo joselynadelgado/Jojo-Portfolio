@@ -12,22 +12,24 @@ body {
   height: 100%;
 }
 
-/* <!!> Color system */
+/* =========================
+   THEME / VARIABLES
+========================= */
 :root {
   --bg: #2b221b;
   --text: #ffffff;
   --thumb-bg: #3a2f27;
 
-  --hover: #b9f27c;     /* keep this for the green border hover */
-  --nav-link: #b9f27c;  /* green text for nav */
-  --nav-hover: #ffffff; /* white hover for nav */
+  --hover: #b9f27c;     /* green hover (borders + pager hover) */
+  --nav-link: #b9f27c;  /* nav green */
+  --nav-hover: #ffffff; /* nav hover to white */
 }
 
+/* Green labels everywhere */
 strong {
-  color: var(--nav-link); /* your green */
-  font-weight: normal;    /* optional: keeps it clean, not shouty */
+  color: var(--nav-link);
+  font-weight: normal;
 }
-
 
 body {
   font-family: Helvetica, sans-serif;
@@ -36,7 +38,7 @@ body {
   background: var(--bg);
   color: var(--text);
 
-  /* <!!> Desktop: page doesn't scroll; columns do */
+  /* Desktop: page doesn't scroll; columns do */
   overflow: hidden;
 }
 
@@ -53,7 +55,7 @@ a:hover {
   text-decoration: none;
 }
 
-/* <!!> Left nav link colors override global link hover */
+/* Nav link colors override global link hover */
 .nav a {
   color: var(--nav-link);
 }
@@ -62,31 +64,30 @@ a:hover {
   color: var(--nav-hover);
 }
 
-
+/* Nav link layout */
 .nav-link {
-  color: #9ad17c; /* green */
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  text-decoration: none;
 }
 
-.nav-link:hover {
-  color: white;
-}
-
+/* =========================
+   SVG ICONS (NAV + PAGER)
+   - Everything uses currentColor so hover works
+========================= */
 .nav-arrow {
   width: 20px;
   height: 20px;
   margin-bottom: 2px;
-  vertical-align: middle;
   flex-shrink: 0;
-  fill: currentColor;
-  stroke: none;
-  filter: none;
+  display: inline-block;
 }
 
-
+/* Force SVG paths to inherit currentColor */
+.nav-arrow path,
+.pager-arrow path {
+  fill: currentColor;
+}
 
 /* =========================
    LAYOUT (DESKTOP)
@@ -133,9 +134,8 @@ a:hover {
   max-width: 22ch;
 }
 
-/* <!!> Photo under Contact */
 .nav-photo {
-  width: 100px; /* your preferred size */
+  width: 100px;
   height: auto;
   display: block;
 }
@@ -190,7 +190,7 @@ a:hover {
   z-index: 1;
 }
 
-/* <!!> Hover border overlay */
+/* Hover border overlay */
 .project-thumb::after {
   content: "";
   position: absolute;
@@ -205,14 +205,13 @@ a:hover {
   border-color: var(--hover);
 }
 
-
+/* About photo */
 .about-photo {
   width: 100px;
   height: auto;
   display: block;
   margin: 12px 0 0;
 }
-
 
 /* =========================
    RIGHT SIDEBAR (DESKTOP)
@@ -263,14 +262,12 @@ a:hover {
   margin-top: 24px;
 }
 
-/* tablet/desktop: 2 columns */
 @media (min-width: 600px) {
   .project-gallery {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* first gallery item spans full width */
 .project-gallery .gallery-item.full {
   grid-column: 1 / -1;
 }
@@ -282,67 +279,22 @@ a:hover {
   display: block;
 }
 
+.project-gallery img {
+  cursor: zoom-in;
+}
 
 /* =========================
-   LIGHTBOX
+   AWARD LINKS
 ========================= */
-.lightbox {
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-
-  display: none;
-  align-items: center;
-  justify-content: center;
-
-  padding: 24px;
-  background: rgba(0, 0, 0, 0.85);
-}
-
-.lightbox.is-open {
-  display: flex;
-}
-
-.lightbox-img {
-  max-width: min(1100px, 92vw);
-  max-height: 90vh;
-  width: auto;
-  height: auto;
-  display: block;
-}
-
-.lightbox-close {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-
-  background: none;
-  border: none;
-  color: #fff;
-
-  font: inherit;
-  font-size: 28px;
-  line-height: 1;
-  cursor: pointer;
-  padding: 6px 10px;
-}
-
-.lightbox-close:hover {
-  color: var(--hover);
-}
-
-/* Award line inside project description */
 .project-award {
   color: var(--hover);
   font-style: italic;
   text-decoration: none;
 }
 
-
 .project-award:hover {
   text-decoration: underline;
 }
-
 
 /* =========================
    LIGHTBOX
@@ -392,54 +344,54 @@ a:hover {
   color: var(--hover);
 }
 
-.project-gallery img {
-  cursor: zoom-in;
-}
-
-
-
 /* =========================
-   MOBILE PAGER
+   MOBILE PAGER (Prev / Next)
+   - Text-only look
+   - No iOS pills, no outlines, no boxes
 ========================= */
-/* <!!> Hidden by default; appears when JS adds .is-visible (and in mobile rules below) */
 .mobile-pager {
   display: none;
-  gap: 16px;                 /* space between Prev / Next */
+  gap: 16px;
   padding: 12px 0 24px;
   margin-top: 24px;
-
-  justify-content: flex-start; /* LEFT aligned */
+  justify-content: flex-start;
   align-items: center;
 }
-
 
 .mobile-pager.is-visible {
   display: flex;
 }
 
-/.pager-btn {
+/* Button reset: kills iOS Safari “pill” styling */
+.pager-btn {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  border: 0;
+  outline: none;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+
+  font: inherit;
   color: var(--text);
+  cursor: pointer;
+
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  line-height: 1;
+}
+
+/* Remove tap highlight / weird selection vibes on iOS */
+.pager-btn,
+.pager-btn * {
+  -webkit-tap-highlight-color: transparent;
 }
 
 .pager-btn:hover {
-  color: var(--hover); /* or white if you prefer */
+  color: var(--hover);
 }
-
-.pager-arrow {
-  width: 18px;
-  height: 18px;
-  display: inline-block;
-  flex-shrink: 0;
-}
-
-.pager-arrow path {
-  fill: currentColor;
-}
-
-
 
 .pager-btn:disabled {
   opacity: 0.35;
@@ -451,54 +403,7 @@ a:hover {
   opacity: 0.6;
 }
 
-
-/* <!!> Link version (only applies if you ever switch pager to <a> tags) */
-.mobile-pager a {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 14px 16px;
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  border-radius: 6px;
-
-  color: var(--text);
-  text-decoration: none;
-  font: inherit;
-}
-
-.mobile-pager a:hover {
-  border-color: var(--hover);
-  color: var(--hover);
-}
-
-/* <!!> Never show pager on desktop */
-@media (min-width: 769px) {
-  .mobile-pager {
-    display: none !important;
-  }
-}
-
-/* Mobile pager BUTTON styling (you use <button>, not <a>) */
-.pager-btn {
-  background: none;
-  border: none;
-  padding: 0;
-
-  font: inherit;
-  color: var(--text);
-  cursor: pointer;
-
-  display: inline-flex;
-  align-items: center;
-  gap: 8px; /* space between arrow + text */
-}
-
-.pager-btn:hover {
-  color: var(--hover); /* or white if you want */
-}
-
+/* SVG sizing */
 .pager-arrow {
   width: 18px;
   height: 18px;
@@ -506,10 +411,12 @@ a:hover {
   flex-shrink: 0;
 }
 
-.pager-arrow path {
-  fill: currentColor;
+/* Never show pager on desktop */
+@media (min-width: 769px) {
+  .mobile-pager {
+    display: none !important;
+  }
 }
-
 
 /* =========================
    MOBILE
@@ -561,7 +468,7 @@ a:hover {
     font-size: 12px;
   }
 
-  /* <!!> Show sidebar only on HOME */
+  /* Show sidebar only on HOME */
   body.is-project .sidebar {
     display: none;
   }
@@ -569,7 +476,7 @@ a:hover {
     display: grid;
   }
 
-  /* <!!> Mobile pager exists only on project pages (and only when .is-visible) */
+  /* Pager exists only on project pages */
   body.is-project .mobile-pager.is-visible {
     display: flex;
   }
@@ -577,15 +484,13 @@ a:hover {
     display: none;
   }
 
-  /* <!!> Extra spacing/behavior you had for mobile project pages */
   body.is-project .mobile-pager {
-  justify-content: flex-start;
-  gap: 16px;
-  margin-top: 40px;
-}
+    justify-content: flex-start;
+    gap: 16px;
+    margin-top: 40px;
+  }
 
   .project-meta {
     grid-template-columns: 1fr;
   }
 }
-
