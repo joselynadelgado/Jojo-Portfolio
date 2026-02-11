@@ -7,8 +7,28 @@ about: {
   leftCol: [
     ["Where I've worked...", "<br> Deerfield Academy // 2023 → Current <br> Tees & More // Summer 2022"],
     ["Where I've learned...", "<br> UConn (go huskies) // 2023 <br> CSM (London, innit) // Fall 2022"],
-    ["Recognitions...", "<br>link"],
-    ["Interests include...", "<br> Vintage photobooths, collecting owl trinkets, modern soul music, & guinness"],
+    [
+  "Recognitions...",
+  `
+  <br><b>2025</b>
+  <br><a href="https://www.case.org/awards/circle-excellence/2025/101-things-never-bored-boarding-school-board-game" target="_blank" rel="noopener">CASE COE Award // Gold</a>
+  <br><a href="https://www.case.org/awards/circle-excellence/2025/deerfield-magazine" target="_blank" rel="noopener">CASE COE Award // Bronze</a>
+
+  <br><b>2024</b>
+  <br><a href="https://www.idesignawards.com/winners/zoom.php?eid=9-59167-24" target="_blank" rel="noopener">IDA Design Awards</a>
+  <br><a href="https://westportjournal.com/arts/swiss-posters-showcased-in-new-moca-ct-exhibit/" target="_blank" rel="noopener">ColleCTomania, MOCA Westport</a>
+
+  <br><b>2023</b>
+  <br><a href="https://winning.work/work/2300-i-was-born-in-caguas" target="_blank" rel="noopener">CADC // Gold Award</a>
+  <br><a href="https://winning.work/work/2302-the-free-uconn-free-press" target="_blank" rel="noopener">CADC // Gold Award</a>
+  <br><a href="https://winning.work/work/2313-london-circles" target="_blank" rel="noopener">CADC // Silver Award</a>
+  <br><a href="https://winning.work/work/2331-punchy-sans-typeface" target="_blank" rel="noopener">CADC // Excellence Award</a>
+
+  <br><b>2022</b>
+  <br><a href="https://winning.work/work/1995-radical-modernisms" target="_blank" rel="noopener">CADC Spirit of Creativity Award</a>
+  `
+],
+["Interests include...", "<br> Vintage photobooths, collecting owl trinkets, modern soul music, & guinness"],
     [
   "What I'm currently listening to...",
   `<br><a href="https://open.spotify.com/playlist/5xSGEiqf37kZJHW5fbbrZO?si=4a9e6de1827449a6" target="_blank" rel="noopener">
@@ -17,9 +37,7 @@ about: {
 ],
     [
   "Say hey...",
-  `<br><a href="https://www.linkedin.com/in/jojo-delgado" target="_blank" rel="noopener">
-    Linkedin
-  </a>`
+  `<br><a href="mailto:joselynadelgado@gmail.com?subject=Portfolio%20Inquiry" class="nav-link"> Email me! </a>`
 ],
 
   ],
